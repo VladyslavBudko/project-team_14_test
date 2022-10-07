@@ -1,8 +1,8 @@
 // import axios from 'axios';
-// import SimpleLightbox from 'simplelightbox';
-// import 'simplelightbox/dist/simple-lightbox.min.css';
+import SimpleLightbox from 'simplelightbox';
+import 'simplelightbox/dist/simple-lightbox.min.css';
 
-// import Notiflix from 'notiflix';
+import Notiflix from 'notiflix';
 import { FetchPhoto, onFetchError } from './js/fetchPhoto';
 import getRefs from './js/get-refs';
 import articlesTpl from './js/articles';
