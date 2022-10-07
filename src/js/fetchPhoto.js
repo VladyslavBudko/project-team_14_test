@@ -5,34 +5,47 @@ export { FetchPhoto, onFetchError };
 
 const refs = getRefs();
 
-// https://pixabay.com/api/?key=30279426-ce0edf6a31bb607e668c5bb01&q=yellow+flowers&image_type=photo
-const MAIN_URL = 'https://pixabay.com/api/';
-const API_KEY = '?key=30279426-ce0edf6a31bb607e668c5bb01&';
+
+// https://api.themoviedb.org/3/movie/550?api_key=0dd125b83baab4c44161e46f210352be
+
+// https://api.themoviedb.org/3/search/movie?api_key=0dd125b83baab4c44161e46f210352be&language=en-US&query=cat&page=1&include_adult=false
+const MAIN_URL = 'https://api.themoviedb.org/3/search/movie?';
+const API_KEY = 'api_key=0dd125b83baab4c44161e46f210352be';
 const URL = MAIN_URL + API_KEY;
+
 
 class FetchPhoto {
   constructor() {
     this.searchQuery = '';
     this.page = 1;
-    this.per_page = 40;
+    this.per_page = 20;
     this.totalHits = 0;
   }
 
   async fetchArticles() {
+    //     GET /search/movie
     const searchParams = new URLSearchParams({
-      q: this.searchQuery,
-      per_page: this.per_page,
-      image_type: 'photo',
-      orientation: 'horizontal',
-      safesearch: true,
+      query: this.searchQuery,
+      include_adult: false,
       page: this.page,
+
+      // /trending/{media_type}/{time_window}
+
+
+      // q: this.searchQuery,
+      // per_page: this.per_page,
+      // image_type: 'photo',
+      // orientation: 'horizontal',
+      // safesearch: true,
+      // page: this.page,
     });
 
     
     try {
-      const url = `${URL}${searchParams}`;
+      const url = `${URL}&${searchParams}`;
       const response = await axios.get(url);
-      
+
+      // !!!!!!!!!!!!!!!
       // console.log(response);
       
       let counterPhoto = this.page * this.per_page;

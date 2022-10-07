@@ -40,7 +40,9 @@ function onSearch(event) {
       if (hits.data.total === 0) {
         return onFetchError();
       }
-      appendArticlesMarkup(hits.data.hits);
+      console.log(hits);
+      console.log(hits.data.results);
+      appendArticlesMarkup(hits.data.results);
       fetchPhoto.incrementPage();
     });
   } catch {
@@ -63,7 +65,7 @@ const onEntry = entries => {
       if (entry.isIntersecting && fetchPhoto.query !== '') {
         fetchPhoto.fetchArticles().then(hits => {
         
-          appendArticlesMarkup(hits.data.hits);
+          appendArticlesMarkup(hits.data.results);
           fetchPhoto.incrementPage();
         });
       }
