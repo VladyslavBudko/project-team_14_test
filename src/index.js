@@ -41,7 +41,6 @@ function onSearch(event) {
         return onFetchError();
       }
       console.log(hits);
-      console.log(hits.data.results);
       appendArticlesMarkup(hits.data.results);
       fetchPhoto.incrementPage();
     });
