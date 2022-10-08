@@ -10,5 +10,6 @@ export default function getRefs() {
     galleryEl: document.querySelector('.gallery'),
 
     changeBgColorBtn: document.querySelectorAll('.switch input'),
+    scrollPagination: document.querySelectorAll('.container input'),
   };
 }

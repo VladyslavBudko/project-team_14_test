@@ -13,15 +13,17 @@ export default class BgColorExportData {
       this.formData = JSON.parse(savedData);
       document.body.dataset.switch = this.formData.status;
 
+      console.log(this.formData);
+      // !!!!!!!!!!!!!
       if (this.formData.status === 'on') {
         refs.changeBgColorBtn[0].checked = 'checked';
       } else refs.changeBgColorBtn[1].checked = 'checked';
     }
   }
 
-  onBgColorBtnClick(radio) {
-    document.body.dataset.switch = radio.value;
-    this.formData[radio.name] = radio.value;
+  onBgColorBtnClick(onClickData) {
+    document.body.dataset.switch = onClickData.value;
+    this.formData[onClickData.name] = onClickData.value;
     localStorage.setItem(this.STORAGE_KEY, JSON.stringify(this.formData));
   }
 }

@@ -8,10 +8,11 @@ import getRefs from './js/get-refs';
 import articlesTpl from './js/articles';
 
 import BgColorExportData from './js/bg-color';
+import ScrollPaginationExportData from './js/scroll-pagination';
+
 
 const refs = getRefs();
 const fetchPhoto = new FetchPhoto();
-const bgColorExportData = new BgColorExportData();
 
 // Пагинация
 import Pagination from 'tui-pagination';
@@ -140,6 +141,8 @@ function showModalImgSimpleLightbox() {
 // });
 
 // переключение фона
+const bgColorExportData = new BgColorExportData();
+
 bgColorExportData.populateData();
 
 refs.changeBgColorBtn.forEach(radio => {
@@ -149,3 +152,16 @@ refs.changeBgColorBtn.forEach(radio => {
 });
 
 bgColorExportData.populateData();
+
+// переключение скролла/пагинации
+const scrollPafinationExportData = new ScrollPaginationExportData();
+
+scrollPafinationExportData.populateData();
+
+refs.scrollPagination.forEach(radio => {
+  radio.addEventListener('change', () => {
+    scrollPafinationExportData.onBgColorBtnClick(radio);
+  });
+});
+
+scrollPafinationExportData.populateData();
