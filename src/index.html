@@ -6,20 +6,34 @@
     <title>Project-team_14--test</title>
     <link rel="stylesheet" href="./css/styles.css" />
     <link rel="stylesheet" href="./css/bg-color.css" />
+    <link rel="stylesheet" href="./css/scroll-pagination.css" />
 
     <script src="./index.js" type="module"></script>
   </head>
   <body>
-
-<!-- Кнопка переключения света -->
+    <!-- Кнопка переключения света -->
     <div class="switch">
-      <input id="on" type="radio" name="status" value="on"/>
+      <input id="on" type="radio" name="status" value="on" />
       <label for="on">on</label>
       <input id="off" type="radio" name="status" value="off" />
       <label for="off">off</label>
     </div>
     <!-- checked="checked" -->
 
+    <!-- переключение сколла и пагинации -->
+    <div class="container">
+      <div class="tabs">
+        <input type="radio" id="radio-1" name="tabs" />
+        <label class="tab" for="radio-1">Scroll</label>
+
+        <input type="radio" id="radio-2" name="tabs" checked />
+        <label class="tab" for="radio-2"
+          >Pagination<span class="notification">2</span></label
+        >
+        <span class="glider"></span>
+      </div>
+    </div>
+    `
     <form class="search-form" id="search-form">
       <input
         type="text"
