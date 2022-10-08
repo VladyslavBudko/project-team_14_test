@@ -13,6 +13,20 @@ const refs = getRefs();
 const fetchPhoto = new FetchPhoto();
 const bgColorExportData = new BgColorExportData();
 
+// Пагинация
+import Pagination from 'tui-pagination';
+import 'tui-pagination/dist/tui-pagination.css';
+
+const container = document.getElementById('tui-pagination-container');
+const instance = new Pagination(container, {  
+  totalItems: 500,
+  itemsPerPage: 10,
+  visiblePages: 5,
+  centerAlign: true });
+
+instance.getCurrentPage();
+// !!!!!!!!!!!!!!!!!
+
 refs.submitBtn.classList.add('button');
 refs.moreBtn.classList.add('button', 'is-hidden');
 
@@ -86,12 +100,12 @@ function onFetch400() {
 }
 
 // Бесконечній скролл
-const observer = new IntersectionObserver(onEntry, {
-  rootMargin: '300px',
-});
-observer.observe(refs.sentinel);
+// const observer = new IntersectionObserver(onEntry, {
+//   rootMargin: '300px',
+// });
+// observer.observe(refs.sentinel);
 
-// SimpleLightbox
+SimpleLightbox
 refs.galleryEl.addEventListener('click', onClickGalleryItem);
 
 function onClickGalleryItem(event) {
@@ -125,6 +139,7 @@ function showModalImgSimpleLightbox() {
 //   behavior: "smooth",
 // });
 
+// переключение фона
 bgColorExportData.populateData();
 
 refs.changeBgColorBtn.forEach(radio => {

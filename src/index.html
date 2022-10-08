@@ -13,9 +13,9 @@
   <body>
     <!-- Кнопка переключения света -->
     <div class="switch">
-      <input id="on" type="radio" name="status" value="on" />
+      <input id="on" type="radio" name="status" value="on"/>
       <label for="on">on</label>
-      <input id="off" type="radio" name="status" value="off" />
+      <input id="off" type="radio" name="status" value="off" checked="checked" />
       <label for="off">off</label>
     </div>
     <!-- checked="checked" -->
@@ -25,15 +25,15 @@
       <div class="tabs">
         <input type="radio" id="radio-1" name="tabs" />
         <label class="tab" for="radio-1">Scroll</label>
-
         <input type="radio" id="radio-2" name="tabs" checked />
         <label class="tab" for="radio-2"
-          >Pagination<span class="notification">2</span></label
-        >
+          >Pagination<span class="notification">2</span>
+        </label>
         <span class="glider"></span>
       </div>
     </div>
-    
+    <!-- переключение сколла и пагинации -->
+
     <form class="search-form" id="search-form">
       <input
         type="text"
@@ -45,8 +45,9 @@
     </form>
 
     <div class="js-articles-container gallery"></div>
+    <div id="tui-pagination-container" class="tui-pagination"></div>
 
-    <div id="sentinel"></div>
+    <div id="sentinel" style="margin-bottom: 200px"></div>
     <button type="button" class="load-more">Back to search</button>
   </body>
 </html>
