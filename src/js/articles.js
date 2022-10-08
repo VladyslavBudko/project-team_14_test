@@ -1,6 +1,6 @@
 export default function articlesTpl(videoData) {
   return videoData
-    .map(({ poster_path, overview, release_date, original_title, popularity }) => {
+    .map(({ poster_path, release_date, original_title, popularity }) => {
       let webformatURL = `https://image.tmdb.org/t/p/w500/${poster_path}`;
       let largeImageURL = `https://image.tmdb.org/t/p/w500/${poster_path}`;
       return `
@@ -21,28 +21,3 @@ export default function articlesTpl(videoData) {
     })
     .join('');
 }
-
-
-// return photo
-// .map(({ largeImageURL, webformatURL, tags, likes, views, comments, downloads }) => {
-//   return `
-//   <div class='photo-card'>
-//   <img src='${webformatURL}' alt='${tags}' loading='lazy' />
-//   <div class='info'>
-//     <p class='info-item'>
-//       <b>Likes: ${likes}</b>
-//     </p>
-//     <p class='info-item'>
-//       <b>Views: ${views}</b>
-//     </p>
-//     <p class='info-item'>
-//       <b>Comments: ${comments}</b>
-//     </p>
-//     <p class='info-item'>
-//       <b>Downloads: ${downloads}</b>
-//     </p>
-//   </div>
-// </div>`;
-// })
-// .join('');
-// }

@@ -7,13 +7,11 @@ import { FetchPhoto, onFetchError } from './js/fetchPhoto';
 import getRefs from './js/get-refs';
 import articlesTpl from './js/articles';
 
-import BgColorExportData from './js/bg-color'
+import BgColorExportData from './js/bg-color';
 
 const refs = getRefs();
 const fetchPhoto = new FetchPhoto();
 const bgColorExportData = new BgColorExportData();
-
-
 
 refs.submitBtn.classList.add('button');
 refs.moreBtn.classList.add('button', 'is-hidden');
@@ -50,7 +48,7 @@ function onSearch(event) {
       fetchPhoto.incrementPage();
     });
   } catch {
-   return onFetch400();
+    return onFetch400();
   }
   clearArticlesContainer();
 }
@@ -68,7 +66,6 @@ const onEntry = entries => {
     entries.forEach(entry => {
       if (entry.isIntersecting && fetchPhoto.query !== '') {
         fetchPhoto.fetchArticles().then(hits => {
-        
           appendArticlesMarkup(hits.data.results);
           fetchPhoto.incrementPage();
         });
@@ -125,14 +122,12 @@ function showModalImgSimpleLightbox() {
 //   behavior: "smooth",
 // });
 
-
-
 bgColorExportData.populateData();
 
 refs.changeBgColorBtn.forEach(radio => {
-	radio.addEventListener('change', () => {
-    bgColorExportData.onBgColorBtnClick(radio)
-	})
-})
+  radio.addEventListener('change', () => {
+    bgColorExportData.onBgColorBtnClick(radio);
+  });
+});
 
-bgColorExportData.populateData()
+bgColorExportData.populateData();

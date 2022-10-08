@@ -21,10 +21,7 @@ export default class BgColorExportData {
 
   onBgColorBtnClick(radio) {
     document.body.dataset.switch = radio.value;
-    console.log('onBgColorBtnClick radio.value:', radio.value);
-
     this.formData[radio.name] = radio.value;
-    console.log(this.formData);
     localStorage.setItem(this.STORAGE_KEY, JSON.stringify(this.formData));
   }
 }

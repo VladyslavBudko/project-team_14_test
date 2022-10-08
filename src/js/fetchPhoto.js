@@ -5,7 +5,6 @@ export { FetchPhoto, onFetchError };
 
 const refs = getRefs();
 
-// https://api.themoviedb.org/3/movie/550?api_key=0dd125b83baab4c44161e46f210352be
 
 // https://api.themoviedb.org/3/search/movie?api_key=0dd125b83baab4c44161e46f210352be&language=en-US&query=cat&page=1&include_adult=false
 const MAIN_URL = 'https://api.themoviedb.org/3/search/movie?';
@@ -41,9 +40,6 @@ class FetchPhoto {
       const url = `${URL}&${searchParams}`;
       const response = await axios.get(url);
 
-      // !!!!!!!!!!!!!!!
-      // console.log(response);
-
       let counterPhoto = this.page * this.per_page;
       this.totalHits = response.data.total_results;
       let total_pages = response.data.total_pages;
@@ -65,7 +61,6 @@ class FetchPhoto {
       return response;
     } catch (error) {
       onFetchInfo(this.totalHits);
-      // console.error('error in async:', error);
     }
   }
 
