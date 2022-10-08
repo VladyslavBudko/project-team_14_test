@@ -43,7 +43,10 @@ function onSearch(event) {
       if (hits.data.total === 0) {
         return onFetchError();
       }
+      
+      // !!!!!!!!!!!!!!!!!!!!!!!
       console.log(hits);
+
       appendArticlesMarkup(hits.data.results);
       fetchPhoto.incrementPage();
     });

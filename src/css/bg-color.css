@@ -9,6 +9,7 @@ body {
     --s: 0%;
     --l: 25%;
     --bg: hsl(var(--h), var(--s), var(--l));
+    /* color: #2a2a2a */
 
     --size: 7vmin;
     --z: 0;
@@ -18,7 +19,7 @@ body {
 
     display: grid;
     perspective: 50em;
-    /* !!!!!! */
+    /* !!!!!!  Исправить шрифт */
     font-family: 'Antonio', sans-serif;
     text-transform: uppercase;
     background-color: var(--bg);
@@ -31,6 +32,9 @@ body {
     --l: 100%;
 }
 
+[data-switch="off"] .info p {
+    color: #eee4e4d3;
+}
 
 .switch {
     position: absolute;
@@ -93,8 +97,9 @@ body {
     cursor: pointer;
     font-size: calc(var(--size) / 3);
     line-height: 1;
-    text-shadow: hsla(0, 0%, 0%, 0.05) 2px 2px 0.2vmin;
-    color: hsl(var(--h) var(--s) calc(var(--l) - 50%));
+    text-shadow: hsla(0, 70%, 36%, 0.742) 2px 2px 0.2vmin;
+    /* color: hsl(var(--h) var(--s) calc(var(--l) - 50%)); */
+    color: #eee4e4d3;
     width: var(--size);
     height: var(--size);
     background-color: hsl(var(--h) var(--s) var(--l));
@@ -132,7 +137,13 @@ body {
 .switch input:checked+label {
     cursor: initial;
     background-color: hsl(var(--h) var(--s) calc(var(--l) - 5%));
+    
 }
+/* 
+.switch.input:checked+label .info p {
+    color: #d2c6c6bc;
+   
+} */
 
 .switch label:first-of-type {
     grid-row: 2;
