@@ -8,5 +8,8 @@ export default function getRefs() {
     articlesContainer: document.querySelector('.js-articles-container'),
 
     galleryEl: document.querySelector('.gallery'),
+
+    changeBgColorBtn: document.querySelectorAll('.switch input'),
+    // switchOn
   };
 }

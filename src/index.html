@@ -5,9 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Homework 11</title>
     <link rel="stylesheet" href="./css/styles.css" />
+    <link rel="stylesheet" href="./css/bg-color.css" />
+
     <script src="./index.js" type="module"></script>
   </head>
   <body>
+<!-- Кнопка переключения света -->
+    <div class="switch">
+      <input id="on" type="radio" name="status" value="on"/>
+      <label for="on">on</label>
+      <input id="off" type="radio" name="status" value="off" />
+      <label for="off">off</label>
+    </div>
+    <!-- checked="checked" -->
+
     <form class="search-form" id="search-form">
       <input
         type="text"
@@ -17,7 +28,7 @@
       />
       <button type="submit">Search</button>
     </form>
-    
+
     <div class="js-articles-container gallery"></div>
 
     <div id="sentinel"></div>

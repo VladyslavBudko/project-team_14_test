@@ -7,8 +7,13 @@ import { FetchPhoto, onFetchError } from './js/fetchPhoto';
 import getRefs from './js/get-refs';
 import articlesTpl from './js/articles';
 
+import BgColorExportData from './js/bg-color'
+
 const refs = getRefs();
 const fetchPhoto = new FetchPhoto();
+const bgColorExportData = new BgColorExportData();
+
+
 
 refs.submitBtn.classList.add('button');
 refs.moreBtn.classList.add('button', 'is-hidden');
@@ -119,3 +124,15 @@ function showModalImgSimpleLightbox() {
 //   top: cardHeight * 2,
 //   behavior: "smooth",
 // });
+
+
+
+bgColorExportData.populateData();
+
+refs.changeBgColorBtn.forEach(radio => {
+	radio.addEventListener('change', () => {
+    bgColorExportData.onBgColorBtnClick(radio)
+	})
+})
+
+bgColorExportData.populateData()
