@@ -39,7 +39,7 @@ body {
 .switch {
     position: absolute;
     right: 5%;
-    top: -5%;
+    top: 0%;
     z-index: 1;
 
     margin: auto;
@@ -139,11 +139,7 @@ body {
     background-color: hsl(var(--h) var(--s) calc(var(--l) - 5%));
     
 }
-/* 
-.switch.input:checked+label .info p {
-    color: #d2c6c6bc;
-   
-} */
+
 
 .switch label:first-of-type {
     grid-row: 2;

@@ -17,15 +17,15 @@ body {
 .container {
     position: absolute;
     left: 0;
-    top: 0;
-    right: 0;
-    bottom: 0;
+    top: 5%;
     display: flex;
     align-items: center;
     justify-content: center;
+    transform: scale(0.6);
 }
 
 .tabs {
+
     display: flex;
     position: relative;
     background-color: #fff;
