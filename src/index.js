@@ -10,7 +10,6 @@ import articlesTpl from './js/articles';
 import BgColorExportData from './js/bg-color';
 import ScrollPaginationExportData from './js/scroll-pagination';
 
-
 const refs = getRefs();
 const fetchPhoto = new FetchPhoto();
 
@@ -19,13 +18,31 @@ import Pagination from 'tui-pagination';
 import 'tui-pagination/dist/tui-pagination.css';
 
 const container = document.getElementById('tui-pagination-container');
-const instance = new Pagination(container, {  
+const paginationResult = new Pagination(container, {
   totalItems: 500,
   itemsPerPage: 10,
   visiblePages: 5,
-  centerAlign: true });
+  centerAlign: true,
+  // template: {
+  //   page: '<a href="#" class="tui-page-btn">{{page}}</a>',
+  //   currentPage:
+  //     '<strong class="tui-page-btn tui-is-selected">{{page}}</strong>',
+  //   moveButton:
+  //     '<a href="#" class="tui-page-btn tui-{{type}}">' +
+  //     '<span class="tui-ico-{{type}}">{{type}}</span>' +
+  //     '</a>',
+  //   disabledMoveButton:
+  //     '<span class="tui-page-btn tui-is-disabled tui-{{type}}">' +
+  //     '<span class="tui-ico-{{type}}">{{type}}</span>' +
+  //     '</span>',
+  //   moreButton:
+  //     '<a href="#" class="tui-page-btn tui-{{type}}-is-ellip">' +
+  //     '<span class="tui-ico-ellip">...</span>' +
+  //     '</a>',
+  // },
+});
 
-instance.getCurrentPage();
+paginationResult.getCurrentPage(3);
 // !!!!!!!!!!!!!!!!!
 
 refs.submitBtn.classList.add('button');
@@ -58,7 +75,7 @@ function onSearch(event) {
       if (hits.data.total === 0) {
         return onFetchError();
       }
-      
+
       // !!!!!!!!!!!!!!!!!!!!!!!
       console.log(hits);
 
@@ -106,7 +123,7 @@ function onFetch400() {
 // });
 // observer.observe(refs.sentinel);
 
-SimpleLightbox
+SimpleLightbox;
 refs.galleryEl.addEventListener('click', onClickGalleryItem);
 
 function onClickGalleryItem(event) {

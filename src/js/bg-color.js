@@ -13,8 +13,8 @@ export default class BgColorExportData {
       this.formData = JSON.parse(savedData);
       document.body.dataset.switch = this.formData.status;
 
-      console.log(this.formData);
-      // !!!!!!!!!!!!!
+      // console.log(this.formData);
+      
       if (this.formData.status === 'on') {
         refs.changeBgColorBtn[0].checked = 'checked';
       } else refs.changeBgColorBtn[1].checked = 'checked';

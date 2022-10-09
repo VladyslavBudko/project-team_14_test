@@ -7,15 +7,22 @@
     <link rel="stylesheet" href="./css/styles.css" />
     <link rel="stylesheet" href="./css/bg-color.css" />
     <link rel="stylesheet" href="./css/scroll-pagination.css" />
+    <link rel="stylesheet" href="./css/pagination-vlad.css" />
 
     <script src="./index.js" type="module"></script>
   </head>
   <body>
     <!-- Кнопка переключения света -->
     <div class="switch">
-      <input id="on" type="radio" name="status" value="on"/>
+      <input id="on" type="radio" name="status" value="on" />
       <label for="on">on</label>
-      <input id="off" type="radio" name="status" value="off" checked="checked" />
+      <input
+        id="off"
+        type="radio"
+        name="status"
+        value="off"
+        checked="checked"
+      />
       <label for="off">off</label>
     </div>
     <!-- checked="checked" -->
@@ -43,11 +50,20 @@
       />
       <button type="submit">Search</button>
     </form>
-
+    <!-- для отображения контента -->
+    <!-- <div class="js-articles-container gallery"></div> -->
+    <!-- пагинация TUI -->
+    <div id="tui-pagination-container" class="tui-pagination" style="margin: 50px"></div>
+    <!-- <div class="list" id="list"></div> -->
     <div class="js-articles-container gallery"></div>
-    <div id="tui-pagination-container" class="tui-pagination"></div>
 
-    <div id="sentinel" style="margin-bottom: 200px"></div>
+    <div class="pagenumbers" id="pagination" style="margin: 50px"></div>
+
+    <script src="./js/pagination-vlad.js"></script>
+    <!-- !!!!!!!!!!!!!!!!! -->
+
+    <div id="sentinel" style="margin: 50px"></div>
     <button type="button" class="load-more">Back to search</button>
+ 
   </body>
 </html>
